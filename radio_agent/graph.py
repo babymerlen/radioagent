@@ -34,8 +34,6 @@ def song_agent(state: AgentState) -> AgentState:
 
 def should_continue(state: AgentState) -> str:
     messages = state["messages"]
-    if isinstance(messages[-1], ToolMessage):
-        return "continue"
     if isinstance(messages[-1], AIMessage):
         return "end"
     return "continue"
